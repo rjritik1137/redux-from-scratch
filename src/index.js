@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { DECREMENT, INCREAMENT } from './constants';
 import { createStore } from './redux/store';
+import { Provider } from './react-redux/Provider';
 
 const reducer = (state = { count: 0 }, action) => {
     switch (action.type) {
@@ -20,7 +21,9 @@ export const store = createStore(reducer, { count: 0 });
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <App />
+        <Provider store={store}>
+            <App />
+        </Provider>
     </React.StrictMode>
 );
 
