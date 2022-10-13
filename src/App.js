@@ -1,7 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import { store } from '.'
+import { DECREMENT, INCREAMENT } from './constants'
+
 
 function App() {
+  const {dispatch, getState } = store
+  console.log(getState())
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +22,14 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={()=>{
+          dispatch({type: INCREAMENT })
+        }}>Increase</button>
+
+        <button onClick={()=>{
+          dispatch({type: DECREMENT })
+        }}>Decrease</button>
+        <p>Count = {getState().count}</p>
       </header>
     </div>
   );
