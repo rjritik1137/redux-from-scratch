@@ -3,10 +3,11 @@ import './App.css';
 import { DECREMENT, INCREAMENT } from './constants';
 import { useDispatch, useSelector } from './react-redux';
 import { useCallback } from 'react';
+import App2, { App3 } from './Apps';
 
 function App() {
     const dispatch = useDispatch();
-    const selector = useCallback((state) => state.count, []);
+    const selector = useCallback((state) => state.counter.count, []);
     const count = useSelector(selector);
 
     return (
@@ -40,6 +41,8 @@ function App() {
                     Decrease
                 </button>
                 <p>Count = {count}</p>
+                <App2 />
+                <App3 />
             </header>
         </div>
     );
