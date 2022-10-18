@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from './react-redux/connect';
+import { connect } from '../react-redux/connect';
 const App2 = (props) => {
     return (
         <div>
@@ -19,6 +19,6 @@ const mapDispatchToProps = (dispatch) => {
         dispatch,
     };
 };
-export default App2;
+
 const App3 = connect(mapStateToProps, mapDispatchToProps)(App2);
 export { App3 };

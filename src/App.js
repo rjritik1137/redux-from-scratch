@@ -1,12 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
-import { DECREMENT, INCREAMENT } from './constants';
-import { useDispatch, useSelector } from './react-redux';
+
+import { useSelector } from './react-redux';
 import { useCallback } from 'react';
-import App2, { App3 } from './Apps';
+
+import { Increase } from './components/Increase';
+import { Decrease } from './components/Decrease';
+import { BigIncrease } from './components/BigIncrease';
+import { BigDecrease } from './components/BigDecrease';
 
 function App() {
-    const dispatch = useDispatch();
     const selector = useCallback((state) => state.counter.count, []);
     const count = useSelector(selector);
 
@@ -25,24 +28,12 @@ function App() {
                 >
                     Learn React
                 </a>
-                <button
-                    onClick={() => {
-                        dispatch({ type: INCREAMENT });
-                    }}
-                >
-                    Increase
-                </button>
+                <Increase />
 
-                <button
-                    onClick={() => {
-                        dispatch({ type: DECREMENT });
-                    }}
-                >
-                    Decrease
-                </button>
+                <Decrease />
+                <BigIncrease />
+                <BigDecrease />
                 <p>Count = {count}</p>
-                <App2 />
-                <App3 />
             </header>
         </div>
     );
