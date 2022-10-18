@@ -3,21 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { DECREMENT, INCREAMENT } from './constants';
-import { createStore } from './redux/store';
-import { Provider } from './react-redux/Provider';
 
-const reducer = (state = { count: 0 }, action) => {
-    switch (action.type) {
-        case INCREAMENT:
-            return { ...state, count: state.count + 1 };
-        case DECREMENT:
-            return { ...state, count: state.count - 1 };
-        default:
-            return state;
-    }
-};
-export const store = createStore(reducer, { count: 0 });
+import { Provider } from './react-redux/Provider';
+import { store } from './store/createStore';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
