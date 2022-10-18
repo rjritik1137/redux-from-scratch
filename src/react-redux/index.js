@@ -9,12 +9,12 @@ export function useSelector(selector) {
     useEffect(() => {
         const unSubscribe = subscribe((state) => {
             const value = selector(state);
-            setMemo(value);
+            if (value !== memo) setMemo(value);
         });
         return () => {
             unSubscribe && unSubscribe();
         };
-    }, [selector, subscribe]);
+    }, [selector, subscribe, memo]);
 
     return memo;
 }
