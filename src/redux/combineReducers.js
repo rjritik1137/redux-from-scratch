@@ -37,7 +37,7 @@ const combineReducers = (reducers) => {
                     currentReducerState,
                     action
                 );
-                console.log(currentReducerState, nextReducerState);
+
                 newCombinedState[property] = nextReducerState;
                 const areStateEqual = nextReducerState === currentReducerState;
                 hasStateChanged |= !areStateEqual;
