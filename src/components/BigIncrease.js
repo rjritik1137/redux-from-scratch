@@ -1,6 +1,6 @@
 import { INCREASE_100 } from '../constants';
-import { useDispatch } from '../react-redux/useDispatchHook';
-import { useSelector } from '../react-redux/useSelectorHook';
+import { useDispatch } from '../react-redux';
+import { useSelector } from '../react-redux';
 const increaseCountSelector = (state) => state.increaseCounter;
 const BigIncrease = (props) => {
     const dispatch = useDispatch();

@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from '../react-redux/connect';
+import { connect } from '../react-redux';
 const Component1 = (props) => {
     return (
         <div>

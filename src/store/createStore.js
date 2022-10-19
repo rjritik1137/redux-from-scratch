@@ -1,4 +1,4 @@
 import { allReducers, initialAppState } from '../reducers/combinedReducers';
-import { createStore } from '../redux/createStore';
+import { createStore } from '../redux';
 
 export const store = createStore(allReducers, initialAppState);

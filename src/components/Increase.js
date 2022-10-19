@@ -1,5 +1,5 @@
 import { INCREAMENT } from '../constants';
-import { useDispatch } from '../react-redux/useDispatchHook';
+import { useDispatch } from '../react-redux';
 
 export const Increase = (props) => {
     const dispatch = useDispatch();
