@@ -8,6 +8,7 @@ import { Increase } from './components/Increase';
 import { Decrease } from './components/Decrease';
 import { BigIncrease } from './components/BigIncrease';
 import { BigDecrease } from './components/BigDecrease';
+import Component1 from './components/Component1';
 
 function App() {
     const selector = useCallback((state) => state.counter.count, []);
@@ -33,6 +34,7 @@ function App() {
                 <Decrease />
                 <BigIncrease />
                 <BigDecrease />
+                <Component1 />
                 <p>Count = {count}</p>
             </header>
         </div>

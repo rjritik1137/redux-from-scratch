@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from '../react-redux/connect';
-const App2 = (props) => {
+const Component1 = (props) => {
     return (
         <div>
             <p>
@@ -20,5 +20,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-const App3 = connect(mapStateToProps, mapDispatchToProps)(App2);
-export { App3 };
+export default connect(mapStateToProps, mapDispatchToProps)(Component1);
