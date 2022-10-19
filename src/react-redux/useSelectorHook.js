@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { ReduxContext } from './Provider';
 
-export function useSelector(selector) {
+function useSelector(selector) {
     const { getState, subscribe } = useContext(ReduxContext);
 
     const [memo, setMemo] = useState(selector(getState()));
@@ -18,3 +18,4 @@ export function useSelector(selector) {
 
     return memo;
 }
+export default useSelector;

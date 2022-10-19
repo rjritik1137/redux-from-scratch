@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
-import { useSelector } from './react-redux/useSelectorHook';
+import { useSelector } from './react-redux/';
 import { useCallback } from 'react';
 
 import { Increase } from './components/Increase';

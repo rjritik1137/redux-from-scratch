@@ -1,7 +1,7 @@
-import { shallowComparison } from './shallowComparison';
-import { useSelector } from './useSelectorHook';
-import { useDispatch } from './useDispatchHook';
-import { connect } from './connect';
-import { Provider } from './Provider';
+import shallowEqual from './shallowEqual';
+import useSelector from './useSelectorHook';
+import useDispatch from './useDispatchHook';
+import connect from './connect';
+import Provider from './Provider';
 
-export { shallowComparison, useSelector, useDispatch, connect, Provider };
+export { shallowEqual, useSelector, useDispatch, connect, Provider };
