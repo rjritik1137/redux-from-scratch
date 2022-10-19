@@ -1,5 +1,6 @@
 import { DECREASE_100 } from '../constants';
-import { useDispatch, useSelector } from '../react-redux';
+import { useDispatch } from '../react-redux/useDispatchHook';
+import { useSelector } from '../react-redux/useSelectorHook';
 const decreaseCountSelector = (state) => state.decreaseCounter;
 const BigDecrease = (props) => {
     const decreaseCounter = useSelector(decreaseCountSelector);

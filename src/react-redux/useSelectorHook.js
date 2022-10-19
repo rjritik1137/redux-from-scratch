@@ -18,8 +18,3 @@ export function useSelector(selector) {
 
     return memo;
 }
-
-export function useDispatch() {
-    const { dispatch } = useContext(ReduxContext);
-    return dispatch;
-}
