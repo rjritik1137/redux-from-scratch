@@ -1,19 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 
-import { useSelector } from './react-redux/';
-import { useCallback } from 'react';
-
 import { Increase } from './components/Increase';
 import { Decrease } from './components/Decrease';
 import { BigIncrease } from './components/BigIncrease';
 import { BigDecrease } from './components/BigDecrease';
 import Component1 from './components/Component1';
+import { Counter } from './components/Counter';
+import { AsyncCounter } from './components/AsyncComponent';
 
 function App() {
-    const selector = useCallback((state) => state.counter.count, []);
-    const count = useSelector(selector);
-
     return (
         <div className="App">
             <header className="App-header">
@@ -29,13 +25,15 @@ function App() {
                 >
                     Learn React
                 </a>
+                <Counter />
                 <Increase />
-
+                <br />
                 <Decrease />
+                <br />
                 <BigIncrease />
                 <BigDecrease />
                 <Component1 />
-                <p>Count = {count}</p>
+                <AsyncCounter />
             </header>
         </div>
     );
