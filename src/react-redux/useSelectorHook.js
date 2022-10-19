@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 import { ReduxContext } from './Provider';
+const defaultEqualityFunction = (obj1, obj2) => obj1 === obj2;
 
-function useSelector(selector) {
+function useSelector(selector, equalityFn = defaultEqualityFunction) {
     const { getState, subscribe } = useContext(ReduxContext);
 
     const [memo, setMemo] = useState(selector(getState()));
@@ -9,12 +10,13 @@ function useSelector(selector) {
     useEffect(() => {
         const unSubscribe = subscribe((state) => {
             const value = selector(state);
-            if (value !== memo) setMemo(value);
+            const isEqual = equalityFn(value, memo);
+            if (!isEqual) setMemo(value);
         });
         return () => {
             unSubscribe && unSubscribe();
         };
-    }, [selector, subscribe, memo]);
+    }, [selector, subscribe, memo, equalityFn]);
 
     return memo;
 }
