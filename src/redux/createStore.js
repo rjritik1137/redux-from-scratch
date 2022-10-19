@@ -2,11 +2,15 @@ const createStore = (reducer, preLoadedState) => {
     let currentState = preLoadedState;
     let currentListeners = [];
 
-    return {
+    const store = {
         getState() {
             return currentState;
         },
         dispatch(action) {
+            if (typeof action === 'function') {
+                action(store.dispatch, store.getState);
+                return action;
+            }
             let nextState = reducer(currentState, action);
             if (nextState !== currentState) {
                 currentState = nextState;
@@ -26,6 +30,7 @@ const createStore = (reducer, preLoadedState) => {
             };
         },
     };
+    return store;
 };
 
 export { createStore };
