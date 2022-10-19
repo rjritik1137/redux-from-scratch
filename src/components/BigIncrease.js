@@ -7,7 +7,7 @@ const BigIncrease = (props) => {
     const increaseCount = useSelector(increaseCountSelector);
     return (
         <div>
-            <p>My count is {increaseCount.count}</p>
+            <p>My bigIncrease count is {increaseCount.count}</p>
             <button onClick={() => dispatch({ type: INCREASE_100 })}>
                 Increase my count by 100
             </button>

@@ -8,7 +8,7 @@ const BigDecrease = (props) => {
     const dispatch = useDispatch();
     return (
         <div>
-            <p>My decreaes count is {decreaseCounter.count}</p>
+            <p>My bigDecrease count is {decreaseCounter.count}</p>
             <button onClick={() => dispatch({ type: DECREASE_100 })}>
                 Decrease my count by 100
             </button>
