@@ -8,13 +8,13 @@ const connect = (mapStateToProps, mapDispatchToProps) => {
             static contextType = ReduxContext;
             getState(storeState) {
                 return mapStateToProps
-                    ? mapStateToProps(storeState)
-                    : storeState;
+                    ? mapStateToProps(storeState, this.props)
+                    : null;
             }
 
             getDispatchProps(dispatch) {
                 return mapDispatchToProps
-                    ? mapDispatchToProps(dispatch)
+                    ? mapDispatchToProps(dispatch, this.props)
                     : { dispatch };
             }
 
@@ -25,6 +25,7 @@ const connect = (mapStateToProps, mapDispatchToProps) => {
             unsubscribe = null;
 
             componentDidMount() {
+                if (!mapStateToProps) return;
                 const { subscribe } = this.context || {};
                 this.unsubscribe = subscribe?.((state) => {
                     const nextState = this.getState(state);
